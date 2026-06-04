@@ -1,110 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials - Webster Web Design</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <header>
-        <nav class="nav-container">
-            <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
-            <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="mywork.html">My Work</a></li>
-                <li><a href="endorsements.html" class="active">Testimonials</a></li>
-                <li><a href="quote.html" class="cta-btn">Get a Quote</a></li>
+    <!-- External Custom Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: {
+                            50: '#FDFDFB',
+                            100: '#FAF8F4',
+                            200: '#F5F0E6',
+                            300: '#EBE2D3',
+                            DEFAULT: '#FCF9F6',
+                        },
+                        pastel: {
+                            blue: '#B3D4FF',
+                            yellow: '#FFE9A3',
+                            green: '#C1F2D6',
+                            pink: '#FFC8DD',
+                            dark: '#22252A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream font-sans text-stone-800 selection:bg-pastel-yellow selection:text-stone-900 overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-3 md:px-8">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-white/40 bg-cream/70 backdrop-blur-xl shadow-lg shadow-stone-100/10 transition-all duration-300">
+            <!-- Logo (No Icon) -->
+            <a href="index.html" class="flex items-center gap-2 group focus:outline-none">
+                <span class="font-display font-bold text-lg tracking-tight text-stone-800">Webster<span class="text-xs font-sans text-stone-400 font-normal ml-0.5">WebDesign</span></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center gap-8 font-semibold text-stone-600">
+                <li><a href="index.html" class="hover:text-stone-900 transition-colors duration-200">Home</a></li>
+                <li><a href="services.html" class="hover:text-stone-900 transition-colors duration-200">Services</a></li>
+                <li><a href="mywork.html" class="hover:text-stone-900 transition-colors duration-200">My Work</a></li>
+                <li><a href="endorsements.html" class="text-stone-950 border-b-2 border-pastel-yellow pb-1 transition-all">Testimonials</a></li>
             </ul>
+
+            <!-- CTA -->
+            <div class="flex items-center gap-4">
+                <a href="quote.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                    Get a Quote
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-xl border border-stone-200/60 hover:bg-white/50 focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 text-stone-800 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden fixed inset-x-0 top-[88px] mx-4 p-6 bg-cream/95 backdrop-blur-xl rounded-3xl border border-white/60 shadow-xl z-40 transition-all duration-300 transform origin-top scale-95 opacity-0">
+            <ul class="flex flex-col gap-5 font-display font-medium text-lg text-stone-700">
+                <li><a href="index.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Home</a></li>
+                <li><a href="services.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Services</a></li>
+                <li><a href="mywork.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">My Work</a></li>
+                <li><a href="endorsements.html" class="mobile-nav-link block p-2 rounded-xl bg-white/60 text-stone-900 font-bold">Testimonials</a></li>
+                <hr class="border-stone-200 my-2">
+                <li>
+                    <a href="quote.html" class="mobile-nav-link w-full inline-flex items-center justify-center py-3 rounded-2xl bg-stone-900 text-cream font-semibold text-center hover:bg-stone-800 transition-colors">
+                        Get a Quote
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <div class="section-inner">
-                <div class="reveal">
-                    <h1 class="section-title">Client Endorsements</h1>
-                    <p class="section-subtitle">Hear directly from the businesses I have helped transition into the digital space.</p>
-                </div>
+    <!-- TESTIMONIALS MAIN BODY -->
+    <main class="pt-32 pb-24 hero-endorsements relative overflow-hidden">
+        <!-- Floating Active Ambient Blobs -->
+        <div class="creative-blob blob-pink blob-anim-1 blob-primary"></div>
+        <div class="creative-blob blob-yellow blob-anim-2 blob-secondary"></div>
+        <div class="creative-blob blob-blue blob-anim-3 blob-tertiary"></div>
 
-                <div class="grid-3">
-                    <div class="card reveal" style="transition-delay: 0.1s;">
-                        <div style="color: var(--accent); font-size: 2rem; line-height: 1;">“</div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;"> Webster Web Design transformed my web speed completely. My conversion metrics instantly ticked up 30% inside the first month. </p>
-                        <hr style="border: none; border-top: 1px solid var(--border); margin-bottom: 1rem;">
-                        <strong>Sarah Jenkins</strong>
-                        <p style="font-size: 0.85rem; color: var(--accent);">CEO, Nova Apparel</p>
+        <section class="py-12 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-stone-900 leading-tight">Client Endorsements</h1>
+                <p class="text-stone-600 text-sm sm:text-base max-w-lg mx-auto">Hear directly from the businesses I have helped transition into the digital space.</p>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS CARDS GRID -->
+        <section class="py-6 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Quote 1 -->
+                    <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
+                        <div class="space-y-4">
+                            <span class="text-5xl font-display font-extrabold text-pastel-blue leading-none select-none block">“</span>
+                            <p class="text-stone-600 font-medium italic text-sm md:text-base leading-relaxed">
+                                Webster Web Design transformed my web speed completely. My conversion metrics instantly ticked up 30% inside the first month.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-pastel-blue flex items-center justify-center font-bold text-xs">SJ</div>
+                            <div>
+                                <h4 class="font-display font-bold text-xs text-stone-900">Sarah Jenkins</h4>
+                                <p class="text-[10px] text-pastel-blue uppercase font-bold tracking-wider">CEO, Nova Apparel</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card reveal" style="transition-delay: 0.2s;">
-                        <div style="color: var(--accent); font-size: 2rem; line-height: 1;">“</div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;"> Using his monthly management tier has completely unburdened our internal team. Changes are fast and perfectly optimized. </p>
-                        <hr style="border: none; border-top: 1px solid var(--border); margin-bottom: 1rem;">
-                        <strong>Marcus Vance</strong>
-                        <p style="font-size: 0.85rem; color: var(--accent);">Founder, Apex Legal</p>
+                    <!-- Quote 2 -->
+                    <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
+                        <div class="space-y-4">
+                            <span class="text-5xl font-display font-extrabold text-pastel-pink leading-none select-none block">“</span>
+                            <p class="text-stone-600 font-medium italic text-sm md:text-base leading-relaxed">
+                                Using his monthly management tier has completely unburdened our internal team. Changes are fast and perfectly optimized.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-pastel-pink flex items-center justify-center font-bold text-xs">MV</div>
+                            <div>
+                                <h4 class="font-display font-bold text-xs text-stone-900">Marcus Vance</h4>
+                                <p class="text-[10px] text-pastel-pink uppercase font-bold tracking-wider">Founder, Apex Legal</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card reveal" style="transition-delay: 0.3s;">
-                        <div style="color: var(--accent); font-size: 2rem; line-height: 1;">“</div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem;"> He understood our branding identity right from the first design review session. The final product exceeded expectations. </p>
-                        <hr style="border: none; border-top: 1px solid var(--border); margin-bottom: 1rem;">
-                        <strong>David Miller</strong>
-                        <p style="font-size: 0.85rem; color: var(--accent);">Director, Summit Coffee</p>
+                    <!-- Quote 3 -->
+                    <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
+                        <div class="space-y-4">
+                            <span class="text-5xl font-display font-extrabold text-pastel-yellow leading-none select-none block">“</span>
+                            <p class="text-stone-600 font-medium italic text-sm md:text-base leading-relaxed">
+                                He understood our branding identity right from the first design review session. The final product exceeded expectations.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-stone-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-pastel-yellow flex items-center justify-center font-bold text-xs">DM</div>
+                            <div>
+                                <h4 class="font-display font-bold text-xs text-stone-900">David Miller</h4>
+                                <p class="text-[10px] text-amber-500 uppercase font-bold tracking-wider">Director, Summit Coffee</p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <div class="footer-wrapper">
-        <footer class="footer-container">
-            <div class="footer-brand">
-                <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
-                <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 280px; margin-top: 0.5rem;">Elevating digital footprints through clean, performance-optimized interface designs.</p>
-                <div class="footer-profile">
-                    <img src="images/headshot.JPG" alt="Founder Headshot" class="avatar">
+    <!-- PREMIUM REFRESHED FOOTER -->
+    <footer class="bg-stone-900 text-stone-300 py-16 px-4 md:px-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-stone-800 pb-12">
+            <!-- Column 1 (No Icon) -->
+            <div class="md:col-span-5 space-y-6">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span class="font-display font-bold text-lg tracking-tight text-white">Webster Web Design</span>
+                </a>
+                <p class="text-sm text-stone-400 leading-relaxed max-w-sm">
+                    Elevating digital footprints through clean, performance-optimized interface designs.
+                </p>
+                <div class="flex items-center gap-4 pt-2">
+                    <div class="w-12 h-12 rounded-2xl bg-pastel-yellow flex items-center justify-center text-xl font-bold text-stone-900 shadow-sm">JW</div>
                     <div>
-                        <h5 style="color: var(--text-main); font-size: 0.95rem; font-weight: 600;">Let's Collaborate</h5>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">Independent Designer & Developer</p>
+                        <h5 class="text-sm font-bold text-white leading-tight">Let's Collaborate</h5>
+                        <p class="text-xs text-stone-500">Independent Designer & Developer</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="services.html">Basic Build</a></li>
-                    <li><a href="services.html">Intermediate Plan</a></li>
-                    <li><a href="services.html">Advanced Platform</a></li>
-                    <li><a href="services.html">Site Management</a></li>
+
+            <!-- Column 2 -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Solutions</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="services.html" class="hover:text-white transition-colors">Basic Build</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Intermediate Plan</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Advanced Platform</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Site Management</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="mywork.html">My Portfolio</a></li>
-                    <li><a href="endorsements.html">Client Reviews</a></li>
-                    <li><a href="services.html#faq">Read FAQs</a></li>
+
+            <!-- Column 3 -->
+            <div class="md:col-span-2 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Information</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="mywork.html" class="hover:text-white transition-colors">My Portfolio</a></li>
+                    <li><a href="endorsements.html" class="hover:text-white transition-colors">Client Reviews</a></li>
+                    <li><a href="services.html#faq" class="hover:text-white transition-colors">Read FAQs</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="quote.html">Get a Quote</a></li>
-                    <li><a href="mailto:hello@websterwebdesign.com">Email Me Directly</a></li>
+
+            <!-- Column 4 -->
+            <div class="md:col-span-2 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Connect</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="quote.html" class="hover:text-white transition-colors font-semibold">Get a Quote</a></li>
+                    <li><a href="mailto:hello@websterwebdesign.com" class="hover:text-white transition-colors">Email Me Directly</a></li>
                 </ul>
             </div>
-        </footer>
-        <div class="footer-bottom">
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
             <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
             <p>Designed with Clean Code Standards.</p>
         </div>
-    </div>
+    </footer>
 
-    <script src="styles/main.js"></script>
+    <!-- MOBILE NAVIGATION LOGIC -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileDrawer.classList.contains('hidden');
+            if (isOpen) {
+                mobileDrawer.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => mobileDrawer.classList.add('hidden'), 200);
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileDrawer.classList.remove('hidden');
+                setTimeout(() => mobileDrawer.classList.remove('opacity-0', 'scale-95'), 10);
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

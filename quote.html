@@ -1,139 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get a Quote - Webster Web Design</title>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <header>
-        <nav class="nav-container">
-            <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
-            <button class="menu-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="mywork.html">My Work</a></li>
-                <li><a href="endorsements.html">Testimonials</a></li>
-                <li><a href="quote.html" class="cta-btn">Get a Quote</a></li>
+    <!-- External Custom Stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: {
+                            50: '#FDFDFB',
+                            100: '#FAF8F4',
+                            200: '#F5F0E6',
+                            300: '#EBE2D3',
+                            DEFAULT: '#FCF9F6',
+                        },
+                        pastel: {
+                            blue: '#B3D4FF',
+                            yellow: '#FFE9A3',
+                            green: '#C1F2D6',
+                            pink: '#FFC8DD',
+                            dark: '#22252A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream font-sans text-stone-800 selection:bg-pastel-yellow selection:text-stone-900 overflow-x-hidden">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-3 md:px-8">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-white/40 bg-cream/70 backdrop-blur-xl shadow-lg shadow-stone-100/10 transition-all duration-300">
+            <!-- Logo (No Icon) -->
+            <a href="index.html" class="flex items-center gap-2 group focus:outline-none">
+                <span class="font-display font-bold text-lg tracking-tight text-stone-800">Webster<span class="text-xs font-sans text-stone-400 font-normal ml-0.5">WebDesign</span></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center gap-8 font-semibold text-stone-600">
+                <li><a href="index.html" class="hover:text-stone-900 transition-colors duration-200">Home</a></li>
+                <li><a href="services.html" class="hover:text-stone-900 transition-colors duration-200">Services</a></li>
+                <li><a href="mywork.html" class="hover:text-stone-900 transition-colors duration-200">My Work</a></li>
+                <li><a href="endorsements.html" class="hover:text-stone-900 transition-colors duration-200">Testimonials</a></li>
             </ul>
+
+            <!-- CTA -->
+            <div class="flex items-center gap-4">
+                <a href="quote.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+                    Get a Quote
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-xl border border-stone-200/60 hover:bg-white/50 focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg id="close-icon" class="w-6 h-6 text-stone-800 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden fixed inset-x-0 top-[88px] mx-4 p-6 bg-cream/95 backdrop-blur-xl rounded-3xl border border-white/60 shadow-xl z-40 transition-all duration-300 transform origin-top scale-95 opacity-0">
+            <ul class="flex flex-col gap-5 font-display font-medium text-lg text-stone-700">
+                <li><a href="index.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Home</a></li>
+                <li><a href="services.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Services</a></li>
+                <li><a href="mywork.html" class="mobile-nav-link block p-2 rounded-xl bg-white/60 text-stone-900 font-bold">My Work</a></li>
+                <li><a href="endorsements.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Testimonials</a></li>
+                <hr class="border-stone-200 my-2">
+                <li>
+                    <a href="quote.html" class="mobile-nav-link w-full inline-flex items-center justify-center py-3 rounded-2xl bg-stone-900 text-cream font-semibold text-center hover:bg-stone-800 transition-colors">
+                        Get a Quote
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <div class="section-inner">
-                <div class="reveal">
-                    <h1 class="section-title">Let's Build Something Great</h1>
-                    <p class="section-subtitle">Tell me about your project objectives and let's structure a custom layout solution.</p>
+    <!-- CONTENT BODY -->
+    <main class="pt-32 pb-24 hero-quote relative overflow-hidden">
+        <!-- Floating Active Ambient Blobs -->
+        <div class="creative-blob blob-yellow blob-anim-1 blob-primary"></div>
+        <div class="creative-blob blob-green blob-anim-2 blob-secondary"></div>
+        <div class="creative-blob blob-blue blob-anim-3 blob-tertiary"></div>
+
+        <section class="py-12 relative z-10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Info block -->
+                <div class="text-center space-y-4 mb-12">
+                    <span class="text-xs font-bold tracking-widest uppercase text-stone-400 bg-white px-3 py-1 rounded-full shadow-sm">Co-Creation</span>
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-stone-900 leading-tight">Let's Build Something Great</h1>
+                    <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto">Tell me about your project objectives and let's structure a custom layout solution.</p>
                 </div>
 
-                <div class="form-container reveal" style="transition-delay: 0.1s;">
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                <!-- Conversational Interactive Form -->
+                <div class="bg-white border border-stone-200/80 rounded-[36px] p-6 sm:p-8 md:p-12 shadow-xl">
+                    <form id="creative-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Your Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        <!-- Dropdown choices starting blank -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Tier -->
+                            <div class="space-y-2">
+                                <label for="package" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Website Tier</label>
+                                <select id="package" name="package" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
+                                    <option value="" disabled selected>Select Website Tier...</option>
+                                    <option value="basic">Basic Build Plan — $1,000</option>
+                                    <option value="intermediate">Intermediate Core Plan — $2,500</option>
+                                    <option value="advanced">Advanced Custom Dev — $5,000+</option>
+                                </select>
+                            </div>
+
+                            <!-- Maintenance -->
+                            <div class="space-y-2">
+                                <label for="management" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Maintenance Tier</label>
+                                <select id="management" name="management" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
+                                    <option value="" disabled selected>Select Maintenance Plan...</option>
+                                    <option value="free">One & Done — $0 (No Ongoing Edits)</option>
+                                    <option value="as-needed">As-Needed Retainer — $50 / per request</option>
+                                    <option value="managed">Fully Managed Support — $100 / month</option>
+                                </select>
+                            </div>
+
+                            <!-- Aesthetics -->
+                            <div class="space-y-2">
+                                <label for="style" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Visual Aesthetic</label>
+                                <select id="style" name="style" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
+                                    <option value="" disabled selected>Select Visual Aesthetic...</option>
+                                    <option value="corporate">Executive Corporate (Clean, Traditional)</option>
+                                    <option value="bold">High-Energy Bold (Fun, Vibrant)</option>
+                                    <option value="minimal">Minimal Luxury (Clean, Editorial Space)</option>
+                                    <option value="tech">SaaS & Tech Cyber (Dark Premium)</option>
+                                    <option value="earthy">Earthy & Organic (Warm, Grounded)</option>
+                                    <option value="portfolio">Avant-Garde (Creative Framework)</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="package">Select Website Tier</label>
-                            <select id="package" name="package">
-                                <option value="basic">Basic Build Plan — $1,000</option>
-                                <option value="intermediate">Intermediate Core Plan — $2,500</option>
-                                <option value="advanced">Advanced Custom Dev — $5,000+</option>
-                            </select>
+                        <!-- Details Area -->
+                        <div class="space-y-2">
+                            <label for="message" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Project Brief & Details</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Describe your business goal and project timeline expectations..." class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all resize-none"></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="management">Select Maintenance Tier</label>
-                            <select id="management" name="management">
-                                <option value="free">One & Done — $0 (No Ongoing Edits)</option>
-                                <option value="as-needed">As-Needed Retainer — $50 / per request</option>
-                                <option value="managed">Fully Managed Support — $100 / month</option>
-                            </select>
+                        <!-- Button -->
+                        <div class="pt-4">
+                            <button type="submit" class="w-full py-4 rounded-2xl bg-stone-900 hover:bg-stone-850 text-cream font-bold text-sm transition-transform hover:scale-[1.01] flex items-center justify-center gap-2 shadow-lg">
+                                <span>Submit Request</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
                         </div>
 
-                        <div class="form-group">
-                            <label for="style">Select Preferred Visual Aesthetic</label>
-                            <select id="style" name="style">
-                                <option value="corporate">Executive Corporate (Clean, Traditional)</option>
-                                <option value="bold">High-Energy Bold (Fun, Vibrant)</option>
-                                <option value="minimal">Minimal Luxury (Clean, Editorial Space)</option>
-                                <option value="tech">SaaS & Tech Cyber (Dark Premium)</option>
-                                <option value="earthy">Earthy & Organic (Warm, Grounded)</option>
-                                <option value="portfolio">Avant-Garde (Creative Framework)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Project Brief & Details</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Describe your business goal and project timeline expectations..."></textarea>
-                        </div>
-
-                        <button type="submit" class="cta-btn" style="border: none; width: 100%; padding: 1rem; cursor: pointer; font-size: 1rem;">Submit Request</button>
                     </form>
                 </div>
             </div>
         </section>
+        
     </main>
 
-    <div class="footer-wrapper">
-        <footer class="footer-container">
-            <div class="footer-brand">
-                <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
-                <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 280px; margin-top: 0.5rem;">Elevating digital footprints through clean, performance-optimized interface designs.</p>
-                <div class="footer-profile">
-                    <img src="images/headshot.JPG" alt="Founder Headshot" class="avatar">
-                    <div>
-                        <h5 style="color: var(--text-main); font-size: 0.95rem; font-weight: 600;">Let's Collaborate</h5>
-                        <p style="color: var(--text-muted); font-size: 0.8rem;">Independent Designer & Developer</p>
-                    </div>
-                </div>
+    <!-- CUSTOM TOAST ALERT OVERLAY -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border bg-white shadow-xl max-w-sm">
+            <span class="text-2xl">💌</span>
+            <div>
+                <h5 class="font-display font-bold text-xs text-stone-800">Inquiry Sent!</h5>
+                <p class="text-[10px] text-stone-500 mt-0.5">I will reach out inside 1 business day.</p>
             </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <ul>
-                    <li><a href="services.html">Basic Build</a></li>
-                    <li><a href="services.html">Intermediate Plan</a></li>
-                    <li><a href="services.html">Advanced Platform</a></li>
-                    <li><a href="services.html">Site Management</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="mywork.html">My Portfolio</a></li>
-                    <li><a href="endorsements.html">Client Reviews</a></li>
-                    <li><a href="services.html#faq">Read FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="quote.html">Get a Quote</a></li>
-                    <li><a href="mailto:hello@websterwebdesign.com">Email Me Directly</a></li>
-                </ul>
-            </div>
-        </footer>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
-            <p>Designed with Clean Code Standards.</p>
         </div>
     </div>
 
-    <script src="styles/main.js"></script>
+    <!-- PREMIUM REFRESHED FOOTER -->
+    <footer class="bg-stone-900 text-stone-300 py-16 px-4 md:px-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-stone-800 pb-12">
+            <!-- Column 1 (No Icon) -->
+            <div class="md:col-span-5 space-y-6">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span class="font-display font-bold text-lg tracking-tight text-white">Webster Web Design</span>
+                </a>
+                <p class="text-sm text-stone-400 leading-relaxed max-w-sm">
+                    Elevating digital footprints through clean, performance-optimized interface designs.
+                </p>
+                <div class="flex items-center gap-4 pt-2">
+                    <div class="w-12 h-12 rounded-2xl bg-pastel-yellow flex items-center justify-center text-xl font-bold text-stone-900 shadow-sm">JW</div>
+                    <div>
+                        <h5 class="text-sm font-bold text-white leading-tight">Let's Collaborate</h5>
+                        <p class="text-xs text-stone-500">Independent Designer & Developer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="md:col-span-3 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Solutions</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="services.html" class="hover:text-white transition-colors">Basic Build</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Intermediate Plan</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Advanced Platform</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Site Management</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="md:col-span-2 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Information</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="mywork.html" class="hover:text-white transition-colors">My Portfolio</a></li>
+                    <li><a href="endorsements.html" class="hover:text-white transition-colors">Client Reviews</a></li>
+                    <li><a href="services.html#faq" class="hover:text-white transition-colors">Read FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="md:col-span-2 space-y-4">
+                <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Connect</h4>
+                <ul class="space-y-2 text-sm text-stone-400">
+                    <li><a href="quote.html" class="hover:text-white transition-colors font-semibold">Get a Quote</a></li>
+                    <li><a href="mailto:hello@websterwebdesign.com" class="hover:text-white transition-colors">Email Me Directly</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+            <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
+            <p>Designed with Clean Code Standards.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Smart Form URL Parsing Logic to auto-set specific packages or management items
+            // Smart Form URL Parsing Logic to set chosen build configuration variables instantly (if passed)
             const urlParams = new URLSearchParams(window.location.search);
             
             const packageParam = urlParams.get('package');
@@ -150,6 +276,52 @@
                 if (selectMgt && selectMgt.querySelector(`option[value="${managementParam}"]`)) {
                     selectMgt.value = managementParam;
                 }
+            }
+
+            const styleParam = urlParams.get('style');
+            if (styleParam) {
+                const selectStyle = document.getElementById('style');
+                if (selectStyle && selectStyle.querySelector(`option[value="${styleParam}"]`)) {
+                    selectStyle.value = styleParam;
+                }
+            }
+        });
+
+        // FORM SUBMIT HANDLER (NO ALERTS)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 5000);
+
+            // Clean form fields
+            document.getElementById('creative-contact-form').reset();
+        }
+
+        // MOBILE DRAWER
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileDrawer.classList.contains('hidden');
+            if (isOpen) {
+                mobileDrawer.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => mobileDrawer.classList.add('hidden'), 200);
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileDrawer.classList.remove('hidden');
+                setTimeout(() => mobileDrawer.classList.remove('opacity-0', 'scale-95'), 10);
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
             }
         });
     </script>
