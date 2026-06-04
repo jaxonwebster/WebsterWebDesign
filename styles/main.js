@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
         const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         
-        // Morphs seamlessly from dark navy into deep indigo accents as you travel down pages
         let r = Math.round(11 + (scrollPercent * 14));  
         let g = Math.round(15 + (scrollPercent * 8));   
         let b = Math.round(25 + (scrollPercent * 15));  
@@ -43,4 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     window.dispatchEvent(new Event('scroll'));
+
+    // 4. Interactive Accordion FAQ Engine
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    faqQuestions.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const currentItem = btn.parentElement;
+            const answerPanel = currentItem.querySelector(".faq-answer");
+            const isOpen = currentItem.classList.contains("open");
+
+            document.querySelectorAll(".faq-item").forEach(item => {
+                item.classList.remove("open");
+                item.querySelector(".faq-answer").style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                currentItem.classList.add("open");
+                answerPanel.style.maxHeight = answerPanel.scrollHeight + "px";
+            }
+        });
+    });
 });

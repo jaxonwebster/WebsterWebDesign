@@ -17,7 +17,7 @@
             <ul class="nav-links" id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="mywork.html">Our Work</a></li>
+                <li><a href="mywork.html">My Work</a></li>
                 <li><a href="endorsements.html">Testimonials</a></li>
                 <li><a href="quote.html" class="cta-btn">Get a Quote</a></li>
             </ul>
@@ -29,7 +29,7 @@
             <div class="section-inner">
                 <div class="reveal">
                     <h1 class="section-title">Let's Build Something Great</h1>
-                    <p class="section-subtitle">Tell us about your project objectives and let's structure a custom layout solution.</p>
+                    <p class="section-subtitle">Tell me about your project objectives and let's structure a custom layout solution.</p>
                 </div>
 
                 <div class="form-container reveal" style="transition-delay: 0.1s;">
@@ -45,18 +45,38 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="package">Select Package Scope</label>
+                            <label for="package">Select Website Tier</label>
                             <select id="package" name="package">
-                                <option value="basic">Basic Tier — $1,000</option>
-                                <option value="intermediate">Intermediate Tier — $2,500</option>
-                                <option value="advanced">Advanced Tier — $5,000</option>
-                                <option value="management">Monthly Management Only — $150/mo</option>
+                                <option value="basic">Basic Build Plan — $1,000</option>
+                                <option value="intermediate">Intermediate Core Plan — $2,500</option>
+                                <option value="advanced">Advanced Custom Dev — $5,000+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="management">Select Maintenance Tier</label>
+                            <select id="management" name="management">
+                                <option value="free">One & Done — $0 (No Ongoing Edits)</option>
+                                <option value="as-needed">As-Needed Retainer — $50 / per request</option>
+                                <option value="managed">Fully Managed Support — $100 / month</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="style">Select Preferred Visual Aesthetic</label>
+                            <select id="style" name="style">
+                                <option value="corporate">Executive Corporate (Clean, Traditional)</option>
+                                <option value="bold">High-Energy Bold (Fun, Vibrant)</option>
+                                <option value="minimal">Minimal Luxury (Clean, Editorial Space)</option>
+                                <option value="tech">SaaS & Tech Cyber (Dark Premium)</option>
+                                <option value="earthy">Earthy & Organic (Warm, Grounded)</option>
+                                <option value="portfolio">Avant-Garde (Creative Framework)</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Project Brief & Details</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Describe your business goal and design vision..."></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Describe your business goal and project timeline expectations..."></textarea>
                         </div>
 
                         <button type="submit" class="cta-btn" style="border: none; width: 100%; padding: 1rem; cursor: pointer; font-size: 1rem;">Submit Request</button>
@@ -66,19 +86,69 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
-    </footer>
+    <div class="footer-wrapper">
+        <footer class="footer-container">
+            <div class="footer-brand">
+                <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 280px; margin-top: 0.5rem;">Elevating digital footprints through clean, performance-optimized interface designs.</p>
+                <div class="footer-profile">
+                    <img src="images/headshot.JPG" alt="Founder Headshot" class="avatar">
+                    <div>
+                        <h5 style="color: var(--text-main); font-size: 0.95rem; font-weight: 600;">Let's Collaborate</h5>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">Independent Designer & Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="services.html">Basic Build</a></li>
+                    <li><a href="services.html">Intermediate Plan</a></li>
+                    <li><a href="services.html">Advanced Platform</a></li>
+                    <li><a href="services.html">Site Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="mywork.html">My Portfolio</a></li>
+                    <li><a href="endorsements.html">Client Reviews</a></li>
+                    <li><a href="services.html#faq">Read FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="quote.html">Get a Quote</a></li>
+                    <li><a href="mailto:hello@websterwebdesign.com">Email Me Directly</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
+            <p>Designed with Clean Code Standards.</p>
+        </div>
+    </div>
 
     <script src="styles/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Smart Form URL Parsing Logic to auto-set specific packages or management items
             const urlParams = new URLSearchParams(window.location.search);
+            
             const packageParam = urlParams.get('package');
             if (packageParam) {
-                const selectDropdown = document.getElementById('package');
-                if (selectDropdown && selectDropdown.querySelector(`option[value="${packageParam}"]`)) {
-                    selectDropdown.value = packageParam;
+                const selectPkg = document.getElementById('package');
+                if (selectPkg && selectPkg.querySelector(`option[value="${packageParam}"]`)) {
+                    selectPkg.value = packageParam;
+                }
+            }
+
+            const managementParam = urlParams.get('management');
+            if (managementParam) {
+                const selectMgt = document.getElementById('management');
+                if (selectMgt && selectMgt.querySelector(`option[value="${managementParam}"]`)) {
+                    selectMgt.value = managementParam;
                 }
             }
         });

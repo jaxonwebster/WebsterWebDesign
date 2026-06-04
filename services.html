@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services & Pricing - Webster Web Design</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Special layout helper classes to emphasize the 3-step builder process */
+        .step-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .step-badge {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            font-size: 1.2rem;
+            font-weight: 800;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .step-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        /* Sticky visual summary callout bar */
+        .sticky-summary {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            background-color: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(16px);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            z-index: 99;
+        }
+        .sticky-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .sticky-text span {
+            color: var(--accent);
+        }
+        .sticky-btn {
+            background-color: var(--accent);
+            color: var(--bg-main);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .sticky-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        @media (max-width: 600px) {
+            .sticky-summary {
+                flex-direction: column;
+                gap: 1rem;
+                border-radius: 20px;
+                text-align: center;
+                bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,19 +93,30 @@
             <ul class="nav-links" id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="mywork.html">Our Work</a></li>
+                <li><a href="mywork.html">My Work</a></li>
                 <li><a href="endorsements.html">Testimonials</a></li>
                 <li><a href="quote.html" class="cta-btn">Get a Quote</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
+    <main style="padding-bottom: 8rem;">
+        
+        <section style="padding-bottom: 2rem;">
             <div class="section-inner">
                 <div class="reveal">
-                    <h1 class="section-title">Our Web Design Packages</h1>
-                    <p class="section-subtitle">Transparent, value-driven pricing structures tailored to your project scope.</p>
+                    <h1 class="section-title">Design Your Perfect Site</h1>
+                    <p class="section-subtitle" style="max-width: 650px; margin: 0 auto 2rem auto;">
+                        Building a high-converting digital platform is simple. Follow the <strong>three steps</strong> below to choose your preferences.
+                </div>
+            </div>
+        </section>
+
+        <section style="padding-top: 0;">
+            <div class="section-inner">
+                <div class="step-heading reveal">
+                    <div class="step-badge">1</div>
+                    <h2 class="step-title">Select Your Website Tier</h2>
                 </div>
 
                 <div class="grid-3">
@@ -38,28 +125,27 @@
                         <p style="color: var(--text-muted);">Ideal for landing pages & small businesses.</p>
                         <div class="price">$1,000 <span>/ flat fee</span></div>
                         <ul class="features-list">
-                            <li>Custom 1-Page Layout</li>
+                            <li>Custom 2-Page Layout</li>
                             <li>Fully Mobile Responsive</li>
                             <li>Contact Form Integration</li>
-                            <li>Basic SEO Setup</li>
                             <li>1 Week Delivery</li>
                         </ul>
-                        <a href="quote.html?package=basic" class="card-btn">Select Basic</a>
+                        <a href="quote.html?package=basic" class="card-btn">Select Basic Build</a>
                     </div>
 
                     <div class="card featured reveal" style="transition-delay: 0.2s;">
                         <div class="badge">Most Popular</div>
                         <h3>Intermediate Plan</h3>
-                        <p style="color: var(--text-muted);">Perfect for growing companies needing depth.</p>
+                        <p style="color: var(--text-muted);">Perfect for growing companies trying to gain traction and look professional.</p>
                         <div class="price">$2,500 <span>/ flat fee</span></div>
                         <ul class="features-list">
                             <li>Up to 5 Custom Pages</li>
                             <li>Advanced CMS Integration</li>
                             <li>Custom Animation Effects</li>
                             <li>Speed Optimization Audit</li>
-                            <li>3 Weeks Delivery</li>
+                            <li>3 Weeks Delivery (max)</li>
                         </ul>
-                        <a href="quote.html?package=intermediate" class="card-btn">Select Intermediate</a>
+                        <a href="quote.html?package=intermediate" class="card-btn">Select Intermediate Build</a>
                     </div>
 
                     <div class="card reveal" style="transition-delay: 0.3s;">
@@ -67,51 +153,77 @@
                         <p style="color: var(--text-muted);">Robust platforms with full custom logic.</p>
                         <div class="price">$5,000+ <span>/ flat fee</span></div>
                         <ul class="features-list">
+                            <li>All other features included</li>
                             <li>Unlimited Page Architecture</li>
                             <li>E-Commerce / Custom App Dev</li>
-                            <li>Premium Integration Suite</li>
-                            <li>Comprehensive SEO Strategy</li>
                             <li>Priority Project Support</li>
                         </ul>
-                        <a href="quote.html?package=advanced" class="card-btn">Select Advanced</a>
+                        <a href="quote.html?package=advanced" class="card-btn">Select Advanced Build</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section style="padding-top: 2rem; padding-bottom: 4rem;">
+        <hr class="section-divider">
+
+        <section>
             <div class="section-inner">
-                <div class="reveal">
-                    <h2 class="section-title">Keep it Running Smoothly</h2>
-                    <p class="section-subtitle">Let us handle the technical overhead while you scale your operations.</p>
+                <div class="step-heading reveal">
+                    <div class="step-badge">2</div>
+                    <h2 class="step-title">Select Your Management Tier</h2>
                 </div>
                 
-                <div style="max-width: 700px; margin: 0 auto;" class="card featured reveal">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <div>
-                            <h3>Monthly Retainer & Management</h3>
-                            <p style="color: var(--text-muted); margin-top: 0.5rem; max-width: 450px;">Includes secure hosting management, code updates, standard text/image changes, and monthly analytics reporting.</p>
-                        </div>
-                        <div>
-                            <div class="price" style="margin: 0;">$150<span>/ month</span></div>
-                        </div>
+                <div class="grid-3">
+                    <div class="card reveal" style="transition-delay: 0.1s;">
+                        <h3>One & Done</h3>
+                        <p style="color: var(--text-muted);">For teams handling code things internally.</p>
+                        <div class="price">$0 <span>/ ongoing</span></div>
+                        <ul class="features-list">
+                            <li>Direct Code Handoff</li>
+                            <li>Zero Recurring Fees</li>
+                            <li>Self-Hosted Autonomy</li>
+                            <li>No Future Adjustments</li>
+                        </ul>
+                        <a href="quote.html?management=free" class="card-btn">Select Free Handoff</a>
                     </div>
-                    <ul class="features-list" style="margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                        <li>24/7 Monitoring</li>
-                        <li>Content Updates</li>
-                        <li>Plugin & Core Patches</li>
-                        <li>Monthly Backups</li>
-                    </ul>
-                    <a href="quote.html?package=management" class="card-btn primary">Inquire About Management</a>
+
+                    <div class="card reveal" style="transition-delay: 0.2s;">
+                        <h3>As Needed Support</h3>
+                        <p style="color: var(--text-muted);">Pay only when your text or graphics change.</p>
+                        <div class="price">$50 <span>/ per request</span></div>
+                        <ul class="features-list">
+                            <li>Flexible Update Frequency</li>
+                            <li>On-Demand Content Swaps</li>
+                            <li>Fast Component Edits</li>
+                            <li>No Monthly Retainers</li>
+                        </ul>
+                        <a href="quote.html?management=as-needed" class="card-btn">Select On-Demand</a>
+                    </div>
+
+                    <div class="card featured reveal" style="transition-delay: 0.3s;">
+                        <div class="badge">Best Value</div>
+                        <h3>Fully Managed</h3>
+                        <p style="color: var(--text-muted);">Send me your requests and I'll deploy them smoothly.</p>
+                        <div class="price">$100 <span>/ month</span></div>
+                        <ul class="features-list">
+                            <li>Priority Monthly Edits</li>
+                            <li>Continuous Security Checks</li>
+                            <li>Plugin & Tech Monitoring</li>
+                            <li>Peace of Mind Support</li>
+                        </ul>
+                        <a href="quote.html?management=managed" class="card-btn primary">Select Managed Plan</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section style="padding-top: 2rem;">
+        <hr class="section-divider">
+
+        <section>
             <div class="section-inner">
-                <div class="reveal">
-                    <h2 class="section-title">Design Directions & Inspiration</h2>
-                    <p class="section-subtitle">Explore visual styles to see how we can express your specific brand identity.</p>
+                <div class="step-heading reveal">
+                    <div class="step-badge">3</div>
+                    <h2 class="step-title">Choose Your Visual Inspiration</h2>
                 </div>
 
                 <div class="grid-styles">
@@ -165,11 +277,104 @@
                 </div>
             </div>
         </section>
+
+        <hr class="section-divider">
+
+        <section id="faq">
+            <div class="section-inner">
+                <div class="reveal">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about my project handoffs and partnership terms.</p>
+                </div>
+
+                <div class="faq-container reveal">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I host my new site online?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>My prices do not include the price to buy your own web domain. Fortunately, there are many <strong>cheap</strong> and <strong>easy</strong> options out there (I host jaxonwebster.com for $15 per year!). Once I deliver your site to you, I will send you a pdf of easy-to-follow instructions on how to get that set up! Since it does require creating a username/password and providing payment to other services, I let you handle all of your sensitive personal information.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What happens if I need changes later but chose "One & Done"?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No problem at all. You can easily switch onto my As-Needed plan anytime down the line at a flat rate of $50 per single batch update request, or enroll in my $100 monthly subscription for hands-free support.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I change my management plan frequency later?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. My support tiers are built to adapt completely to your business operations. You can scale from the fully managed subscription down to on-demand requests with zero penalties.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take to deliver?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It depends on the type of site you purchased! My standard turnaround target for multi-page options takes roughly 1-3 weeks from creating structural blueprint, gathering images, building, and making final edits. Again, it depends on the complexity of your request, and we can discuss that more when you submit your quote request!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
-    </footer>
+    <div class="footer-wrapper">
+        <footer class="footer-container">
+            <div class="footer-brand">
+                <div class="logo"><a href="index.html">Webster<span>WebDesign</span></a></div>
+                <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 280px; margin-top: 0.5rem;">Elevating digital footprints through clean, performance-optimized interface designs.</p>
+                <div class="footer-profile">
+                    <img src="images/headshot.JPG" alt="Founder Headshot" class="avatar">
+                    <div>
+                        <h5 style="color: var(--text-main); font-size: 0.95rem; font-weight: 600;">Let's Collaborate</h5>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">Independent Designer & Developer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="services.html">Basic Build</a></li>
+                    <li><a href="services.html">Intermediate Plan</a></li>
+                    <li><a href="services.html">Advanced Platform</a></li>
+                    <li><a href="services.html">Site Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="mywork.html">My Portfolio</a></li>
+                    <li><a href="endorsements.html">Client Reviews</a></li>
+                    <li><a href="services.html#faq">Read FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="quote.html">Get a Quote</a></li>
+                    <li><a href="mailto:hello@websterwebdesign.com">Email Me Directly</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
+            <p>Designed with Clean Code Standards.</p>
+        </div>
+    </div>
 
     <script src="styles/main.js"></script>
 </body>

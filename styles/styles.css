@@ -1,7 +1,7 @@
 /* --- Global Reset & Variables --- */
 :root {
-    --bg-main: #0b0f19;         /* Core dark background */
-    --bg-surface: #1e293b;      /* Solid card background */
+    --bg-main: #0b0f19;         
+    --bg-surface: #1e293b;      
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --accent: #38bdf8;
@@ -22,7 +22,6 @@ body {
     font-family: var(--font);
     line-height: 1.6;
     overflow-x: hidden;
-    /* Smooth transition for the ambient JS background scroll effect */
     transition: background 0.8s ease-out; 
 }
 
@@ -125,10 +124,19 @@ header {
     transform: translateY(0);
 }
 
-/* --- Clean, Seamless Uniform Sections --- */
+/* --- Thin Blue Section Dividers --- */
+.section-divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3) 20%, rgba(56, 189, 248, 0.3) 80%, transparent);
+    border: none;
+}
+
+/* --- Structural Base --- */
 section {
     padding: 6rem 2rem;
-    background-color: transparent; /* Allows background gradient to flow perfectly */
+    background-color: transparent; 
 }
 
 .section-inner {
@@ -214,7 +222,70 @@ section {
     font-weight: 700;
 }
 
-/* --- Service & Pricing Internals --- */
+/* --- Process Roadmaps --- */
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+/* --- Interactive FAQ Accordion Elements --- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-item.open .faq-answer {
+    padding-bottom: 1.5rem;
+}
+
+/* --- Pricing Internals --- */
 .price {
     font-size: 2.5rem;
     font-weight: 700;
@@ -269,7 +340,7 @@ section {
     color: var(--bg-main);
 }
 
-/* --- Forms --- */
+/* --- Form Architecture --- */
 .form-container {
     max-width: 600px;
     margin: 0 auto;
@@ -308,13 +379,83 @@ section {
     border-color: var(--accent);
 }
 
-/* --- Footer --- */
-footer {
+/* --- Premium Corporate Footer Layout --- */
+.footer-wrapper {
+    background-color: rgba(11, 15, 25, 0.9);
+    backdrop-filter: blur(8px);
     border-top: 1px solid var(--border);
-    padding: 3rem 2rem;
-    text-align: center;
+    padding: 5rem 2rem 2rem 2rem;
+    margin-top: 6rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    background-color: var(--bg-surface);
+}
+
+.footer-col h4 {
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-col ul a {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 4rem auto 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 /* --- Mobile Responsiveness --- */
@@ -365,5 +506,16 @@ footer {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2.5rem;
     }
 }
