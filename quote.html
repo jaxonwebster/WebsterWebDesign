@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get a Quote - Webster Web Design</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- External Custom Stylesheet -->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -48,15 +44,12 @@
 </head>
 <body class="bg-cream font-sans text-stone-800 selection:bg-pastel-yellow selection:text-stone-900 overflow-x-hidden">
 
-    <!-- NAVIGATION BAR -->
     <header class="fixed top-0 left-0 w-full z-50 px-4 py-3 md:px-8">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-white/40 bg-cream/70 backdrop-blur-xl shadow-lg shadow-stone-100/10 transition-all duration-300">
-            <!-- Logo (No Icon) -->
             <a href="index.html" class="flex items-center gap-2 group focus:outline-none">
                 <span class="font-display font-bold text-lg tracking-tight text-stone-800">Webster<span class="text-xs font-sans text-stone-400 font-normal ml-0.5">WebDesign</span></span>
             </a>
 
-            <!-- Desktop Links -->
             <ul class="hidden md:flex items-center gap-8 font-semibold text-stone-600">
                 <li><a href="index.html" class="hover:text-stone-900 transition-colors duration-200">Home</a></li>
                 <li><a href="services.html" class="hover:text-stone-900 transition-colors duration-200">Services</a></li>
@@ -64,10 +57,9 @@
                 <li><a href="endorsements.html" class="hover:text-stone-900 transition-colors duration-200">Testimonials</a></li>
             </ul>
 
-            <!-- CTA -->
             <div class="flex items-center gap-4">
                 <a href="quote.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
-                    Get a Quote
+                    Build My Site
                 </a>
                 
                 <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-xl border border-stone-200/60 hover:bg-white/50 focus:outline-none">
@@ -77,7 +69,6 @@
             </div>
         </nav>
 
-        <!-- Mobile Drawer -->
         <div id="mobile-drawer" class="hidden md:hidden fixed inset-x-0 top-[88px] mx-4 p-6 bg-cream/95 backdrop-blur-xl rounded-3xl border border-white/60 shadow-xl z-40 transition-all duration-300 transform origin-top scale-95 opacity-0">
             <ul class="flex flex-col gap-5 font-display font-medium text-lg text-stone-700">
                 <li><a href="index.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Home</a></li>
@@ -94,64 +85,76 @@
         </div>
     </header>
 
-    <!-- CONTENT BODY -->
     <main class="pt-32 pb-24 hero-quote relative overflow-hidden">
-        <!-- Floating Active Ambient Blobs -->
         <div class="creative-blob blob-yellow blob-anim-1 blob-primary"></div>
         <div class="creative-blob blob-green blob-anim-2 blob-secondary"></div>
         <div class="creative-blob blob-blue blob-anim-3 blob-tertiary"></div>
 
         <section class="py-12 relative z-10">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Info block -->
                 <div class="text-center space-y-4 mb-12">
                     <h1 class="font-display font-extrabold text-4xl sm:text-5xl text-stone-900 leading-tight">Let's Build <br class="sm:hidden">Something <span class="underline decoration-pastel-blue decoration-8 underline-offset-4">Great</span></h1>
-                    <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto">Tell me about your project objectives and let's structure a custom layout solution.</p>
+                    <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto">Tell me about your project objectives and I'll be in touch shortly to make a gameplan together. Submitting a site request is free!</p>
                 </div>
 
-                <!-- Conversational Interactive Form -->
                 <div class="bg-white border border-stone-200/80 rounded-[36px] p-6 sm:p-8 md:p-12 shadow-xl">
-                    <form id="creative-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <form id="creative-contact-form" action="https://formspree.io/f/mpqeqqqo" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Name -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                             <div class="space-y-2">
                                 <label for="name" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Your Name</label>
                                 <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
                             </div>
 
-                            <!-- Email -->
                             <div class="space-y-2">
                                 <label for="email" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Email Address</label>
                                 <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
                             </div>
+
+                            <div class="space-y-2 sm:col-span-2 md:col-span-1">
+                                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
+                            </div>
                         </div>
 
-                        <!-- Dropdown choices starting blank -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+                            <div class="space-y-2">
+                                <label for="contact-preference" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Preferred Contact Method</label>
+                                <select id="contact-preference" name="contact_preference" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
+                                    <option value="" disabled selected>How should I reach you?</option>
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone Call / Text</option>
+                                    <option value="other">Other Method</option>
+                                </select>
+                            </div>
+
+                            <div id="conditional-contact-container" class="space-y-2 hidden opacity-0 transition-all duration-300 transform -translate-y-2">
+                                <label for="other-contact-details" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Specify Communication Method</label>
+                                <input type="text" id="other-contact-details" name="other_contact_method" placeholder="e.g. Discord, Telegram, Slack" class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all">
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <!-- Tier -->
                             <div class="space-y-2">
                                 <label for="package" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Website Tier</label>
                                 <select id="package" name="package" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
                                     <option value="" disabled selected>Select Website Tier...</option>
-                                    <option value="basic">Basic Build Plan — $1,000</option>
-                                    <option value="intermediate">Intermediate Core Plan — $2,500</option>
-                                    <option value="advanced">Advanced Custom Dev — $5,000+</option>
+                                    <option value="basic">Basic Plan — $250</option>
+                                    <option value="intermediate">Intermediate Plan — $750</option>
+                                    <option value="advanced">Advanced Plan — $1,250</option>
                                 </select>
                             </div>
 
-                            <!-- Maintenance -->
                             <div class="space-y-2">
                                 <label for="management" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Maintenance Tier</label>
                                 <select id="management" name="management" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
                                     <option value="" disabled selected>Select Maintenance Plan...</option>
                                     <option value="free">One & Done — $0 (No Ongoing Edits)</option>
-                                    <option value="as-needed">As-Needed Retainer — $50 / per request</option>
-                                    <option value="managed">Fully Managed Support — $100 / month</option>
+                                    <option value="as-needed">As-Needed — $25 / per round of edits</option>
+                                    <option value="managed">Fully Managed Support — $50 / month, unlimited edits anytime</option>
                                 </select>
                             </div>
 
-                            <!-- Aesthetics -->
                             <div class="space-y-2">
                                 <label for="style" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Visual Aesthetic</label>
                                 <select id="style" name="style" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
@@ -161,20 +164,18 @@
                                     <option value="minimal">Minimal Luxury (Clean, Editorial Space)</option>
                                     <option value="tech">SaaS & Tech Cyber (Dark Premium)</option>
                                     <option value="earthy">Earthy & Organic (Warm, Grounded)</option>
-                                    <option value="portfolio">Avant-Garde (Creative Framework)</option>
+                                    <option value="portfolio">Other</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Details Area -->
                         <div class="space-y-2">
                             <label for="message" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Project Brief & Details</label>
                             <textarea id="message" name="message" rows="5" required placeholder="Describe your business goal and project timeline expectations..." class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue focus:ring-2 focus:ring-pastel-blue/20 outline-none text-sm transition-all resize-none"></textarea>
                         </div>
 
-                        <!-- Button -->
                         <div class="pt-4">
-                            <button type="submit" class="w-full py-4 rounded-2xl bg-stone-900 hover:bg-stone-850 text-cream font-bold text-sm transition-transform hover:scale-[1.01] flex items-center justify-center gap-2 shadow-lg">
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-2xl bg-stone-900 hover:bg-stone-850 text-cream font-bold text-sm transition-transform hover:scale-[1.01] flex items-center justify-center gap-2 shadow-lg disabled:opacity-50">
                                 <span>Submit Request</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
@@ -187,21 +188,18 @@
         
     </main>
 
-    <!-- CUSTOM TOAST ALERT OVERLAY -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
         <div class="flex items-center gap-3 px-6 py-4 rounded-2xl border bg-white shadow-xl max-w-sm">
-            <span class="text-2xl">💌</span>
+            <span id="toast-emoji" class="text-2xl">💌</span>
             <div>
-                <h5 class="font-display font-bold text-xs text-stone-800">Inquiry Sent!</h5>
-                <p class="text-[10px] text-stone-500 mt-0.5">I will reach out inside 1 business day.</p>
+                <h5 id="toast-title" class="font-display font-bold text-xs text-stone-800">Inquiry Sent!</h5>
+                <p id="toast-desc" class="text-[10px] text-stone-500 mt-0.5">I will reach out soon to discuss next steps!</p>
             </div>
         </div>
     </div>
 
-    <!-- PREMIUM REFRESHED FOOTER -->
     <footer class="bg-stone-900 text-stone-300 py-16 px-4 md:px-8 border-t border-stone-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-stone-800 pb-12">
-            <!-- Column 1 (No Icon) -->
             <div class="md:col-span-5 space-y-6">
                 <a href="index.html" class="flex items-center gap-2 group">
                     <span class="font-display font-bold text-lg tracking-tight text-white">Webster Web Design</span>
@@ -218,18 +216,15 @@
                 </div>
             </div>
 
-            <!-- Column 2 -->
             <div class="md:col-span-3 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Solutions</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
-                    <li><a href="services.html" class="hover:text-white transition-colors">Basic Build</a></li>
-                    <li><a href="services.html" class="hover:text-white transition-colors">Intermediate Plan</a></li>
-                    <li><a href="services.html" class="hover:text-white transition-colors">Advanced Platform</a></li>
-                    <li><a href="services.html" class="hover:text-white transition-colors">Site Management</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Basic</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Intermediate</a></li>
+                    <li><a href="services.html" class="hover:text-white transition-colors">Advanced</a></li>
                 </ul>
             </div>
 
-            <!-- Column 3 -->
             <div class="md:col-span-2 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Information</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
@@ -239,12 +234,11 @@
                 </ul>
             </div>
 
-            <!-- Column 4 -->
             <div class="md:col-span-2 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Connect</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
-                    <li><a href="quote.html" class="hover:text-white transition-colors font-semibold">Get a Quote</a></li>
-                    <li><a href="mailto:hello@websterwebdesign.com" class="hover:text-white transition-colors">Email Me Directly</a></li>
+                    <li><a href="quote.html" class="hover:text-white transition-colors font-semibold">Build My Site</a></li>
+                    <li><a href="mailto:hello@jaxonwebster4@gmail.com.com" class="hover:text-white transition-colors">Email Me Directly</a></li>
                 </ul>
             </div>
         </div>
@@ -255,7 +249,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // Smart Form URL Parsing Logic to set chosen build configuration variables instantly (if passed)
@@ -284,23 +277,94 @@
                     selectStyle.value = styleParam;
                 }
             }
+
+            // CONDITIONAL PREFERENCE DROPDOWN HANDLING
+            const contactPreference = document.getElementById('contact-preference');
+            const conditionalContainer = document.getElementById('conditional-contact-container');
+            const otherInput = document.getElementById('other-contact-details');
+
+            contactPreference.addEventListener('change', () => {
+                if (contactPreference.value === 'other') {
+                    // Show custom layout
+                    conditionalContainer.classList.remove('hidden');
+                    setTimeout(() => {
+                        conditionalContainer.classList.remove('opacity-0', '-translate-y-2');
+                    }, 10);
+                    otherInput.required = true;
+                } else {
+                    // Hide safely
+                    conditionalContainer.classList.add('opacity-0', '-translate-y-2');
+                    otherInput.required = false;
+                    setTimeout(() => {
+                        conditionalContainer.classList.add('hidden');
+                    }, 300);
+                }
+            });
         });
 
-        // FORM SUBMIT HANDLER (NO ALERTS)
+        // FORM SUBMIT HANDLER WITH FORMSPREE FETCH
         function handleFormSubmit(event) {
             event.preventDefault();
             
+            const form = document.getElementById('creative-contact-form');
+            const submitBtn = document.getElementById('submit-btn');
             const toast = document.getElementById('toast');
-            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-            toast.classList.add('translate-y-0', 'opacity-100');
+            const toastEmoji = document.getElementById('toast-emoji');
+            const toastTitle = document.getElementById('toast-title');
+            const toastDesc = document.getElementById('toast-desc');
+            const conditionalContainer = document.getElementById('conditional-contact-container');
+            
+            // Disable button during network request
+            submitBtn.disabled = true;
+            
+            // Collect Form Data
+            const data = new FormData(form);
+            
+            // Send asynchronously to Formspree
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Success setup
+                    toastEmoji.textContent = "💌";
+                    toastTitle.textContent = "Inquiry Sent!";
+                    toastDesc.textContent = "I will reach out inside 1 business day.";
+                    form.reset();
+                    // Snap hidden element state back cleanly
+                    conditionalContainer.classList.add('hidden', 'opacity-0', '-translate-y-2');
+                } else {
+                    // Formspree API Error setup
+                    toastEmoji.textContent = "⚠️";
+                    toastTitle.textContent = "Submission Error";
+                    toastDesc.textContent = "Please try again or contact me directly.";
+                }
+                showToast();
+            }).catch(error => {
+                // Network Fail setup
+                toastEmoji.textContent = "❌";
+                toastTitle.textContent = "Connection Error";
+                toastDesc.textContent = "Check your internet connection and try again.";
+                showToast();
+            });
 
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 5000);
+            function showToast() {
+                // Re-enable button
+                submitBtn.disabled = false;
+                
+                // Slide toast into view
+                toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.add('translate-y-0', 'opacity-100');
 
-            // Clean form fields
-            document.getElementById('creative-contact-form').reset();
+                // Animate toast back out after 5 seconds
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                }, 5000);
+            }
         }
 
         // MOBILE DRAWER
