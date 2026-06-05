@@ -116,10 +116,8 @@
             <!-- Left Side Copy -->
             <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
 
-                <!-- Split title layout explicitly for mobile viewports -->
-                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-stone-900 leading-[1.1]">
-                    Your Website,<br><span class="underline decoration-pastel-blue decoration-8 underline-offset-4">Your Way</span>.
-                </h1>
+                <!-- Split title layout explicitly for mobile viewports with typewriter effect container -->
+                <h1 id="hero-title" class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-stone-900 leading-[1.1] invisible">Your Website,<br><span class="underline decoration-pastel-blue decoration-8 underline-offset-4">Your Way</span>.</h1>
 
                 <p class="text-sm sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
                     Because your brand doesn't fit in a pre-made template.
@@ -138,14 +136,11 @@
 
             <!-- Right Side Display Image Frame (Always Visible on Mobile and Desktop) -->
             <div class="lg:col-span-6 flex flex-col items-center w-full">
-                <div class="w-full max-w-lg relative animate-float p-2">
-                    
-                    <!-- INSERT YOUR CUSTOM DISPLAY IMAGE HERE -->
-                    <!-- Points to your graphic file 'heroimage.png' with fallback settings -->
-                    <!-- Removed solid background panel, card container, border, and backdrop filter to let your transparent PNG blend cleanly on the active color blobs background -->
+                <!-- Removed active hover float animation block wrapper per client instructions -->
+                <div class="w-full max-w-lg relative p-2">
                     <img src="images/heroimage.png" 
                          alt="Custom Handcrafted Workspace" 
-                         class="w-full h-auto object-contain drop-shadow-2xl"
+                         class="w-full h-auto object-contain"
                          onerror="this.src='https://images.unsplash.com/photo-1541462608141-2f528de88c55?auto=format&fit=crop&w=800&q=80';">
                          
                 </div>
@@ -330,6 +325,35 @@
                 setTimeout(() => mobileDrawer.classList.remove('opacity-0', 'scale-95'), 10);
                 menuIcon.classList.add('hidden');
                 closeIcon.classList.remove('hidden');
+            }
+        });
+
+        // HTML Tag-Safe Typewriter engine integration
+        window.addEventListener('DOMContentLoaded', () => {
+            const title = document.getElementById('hero-title');
+            if (title) {
+                const html = title.innerHTML;
+                title.innerHTML = '';
+                title.classList.remove('invisible');
+                let i = 0;
+                let currentHTML = '';
+                function step() {
+                    if (i < html.length) {
+                        if (html[i] === '<') {
+                            const end = html.indexOf('>', i);
+                            if (end !== -1) {
+                                currentHTML += html.substring(i, end + 1);
+                                i = end + 1;
+                            }
+                        } else {
+                            currentHTML += html[i];
+                            i++;
+                        }
+                        title.innerHTML = currentHTML;
+                        setTimeout(step, 30); // smooth, organic speed
+                    }
+                }
+                step();
             }
         });
     </script>
