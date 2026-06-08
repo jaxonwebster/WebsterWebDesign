@@ -58,9 +58,9 @@
             </ul>
 
             <div class="flex items-center gap-4">
-                <a href="quote.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
-                    Build My Site
-                </a>
+                <a href="quote.html" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
+    Build My Site
+</a>
                 
                 <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-xl border border-stone-200/60 hover:bg-white/50 focus:outline-none">
                     <svg id="menu-icon" class="w-6 h-6 text-stone-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -158,12 +158,12 @@
                             <div class="space-y-2">
                                 <label for="style" class="block text-xs font-bold uppercase tracking-wider text-stone-400">Visual Aesthetic</label>
                                 <select id="style" name="style" required class="w-full p-4 rounded-2xl bg-cream-50 border border-stone-200 focus:border-pastel-blue outline-none text-xs transition-all">
-                                    <option value="" disabled selected>Select Visual Aesthetic...</option>
-                                    <option value="corporate">Executive Corporate (Clean, Traditional)</option>
-                                    <option value="bold">High-Energy Bold (Fun, Vibrant)</option>
-                                    <option value="minimal">Minimal Luxury (Clean, Editorial Space)</option>
-                                    <option value="tech">SaaS & Tech Cyber (Dark Premium)</option>
-                                    <option value="earthy">Earthy & Organic (Warm, Grounded)</option>
+                                    <option value="" disabled selected>Select Visual Inspiration...</option>
+                                    <option value="corporate">Executive Corporate</option>
+                                    <option value="bold">High-Energy Bold</option>
+                                    <option value="minimal">Minimal Luxury</option>
+                                    <option value="tech">SaaS & Tech Cyber</option>
+                                    <option value="earthy">Earthy & Organic</option>
                                     <option value="portfolio">Other</option>
                                 </select>
                             </div>
@@ -211,7 +211,7 @@
                     <img src="images/headshot.JPG" alt="Jaxon Webster Headshot" class="w-12 h-12 rounded-2xl object-cover shadow-sm">
                     <div>
                         <h5 class="text-sm font-bold text-white leading-tight">Let's Collaborate</h5>
-                        <p class="text-xs text-stone-500">Independent Designer & Developer</p>
+                        <p class="text-xs text-stone-500">Independent Developer</p>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,6 @@
 
         <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
             <p>&copy; 2026 Webster Web Design. All rights reserved.</p>
-            <p>Designed with Clean Code Standards.</p>
         </div>
     </footer>
 
@@ -332,7 +331,7 @@
                     // Success setup
                     toastEmoji.textContent = "💌";
                     toastTitle.textContent = "Inquiry Sent!";
-                    toastDesc.textContent = "I will reach out inside 1 business day.";
+                    toastDesc.textContent = "I will reach out soon to get in touch about next steps.";
                     form.reset();
                     // Snap hidden element state back cleanly
                     conditionalContainer.classList.add('hidden', 'opacity-0', '-translate-y-2');
