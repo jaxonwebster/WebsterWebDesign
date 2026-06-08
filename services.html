@@ -1,12 +1,3 @@
-Here is your updated, fully ready-to-use HTML file.
-
-### What was updated:
-
-1. **Unified Feature Matrix:** Every card now includes an identical list of features so prospective clients can easily scan them side-by-side.
-2. **Visual Indicators:** Features are marked with a green checkmark icon (`✓`) or a grayed-out cross icon (`✕`) with strike-through styling depending on whether they are included in that tier.
-3. **Data Integrity Kept:** All your pricing formulas, Tailwind states, JavaScript functions, event click handlers, and page content are preserved exactly as they were so your dynamic pricing calculator works out of the box.
-
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -71,6 +62,7 @@ Here is your updated, fully ready-to-use HTML file.
                 <li><a href="services.html" class="text-stone-950 border-b-2 border-pastel-yellow pb-1 transition-all">Services</a></li>
                 <li><a href="mywork.html" class="hover:text-stone-900 transition-colors duration-200">My Work</a></li>
                 <li><a href="endorsements.html" class="hover:text-stone-900 transition-colors duration-200">Testimonials</a></li>
+                <li><a href="services.html#faq" class="hover:text-stone-900 transition-colors duration-200">FAQs</a></li>
             </ul>
 
             <!-- CTA -->
@@ -93,6 +85,7 @@ Here is your updated, fully ready-to-use HTML file.
                 <li><a href="services.html" class="mobile-nav-link block p-2 rounded-xl bg-white/60 text-stone-900 font-bold">Services</a></li>
                 <li><a href="mywork.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">My Work</a></li>
                 <li><a href="endorsements.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Testimonials</a></li>
+                <li><a href="services.html#faq" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">FAQs</a></li>
                 <hr class="border-stone-200 my-2">
                 <li>
                     <a href="quote.html" class="mobile-nav-link w-full inline-flex items-center justify-center py-3 rounded-2xl bg-stone-900 text-cream font-semibold text-center hover:bg-stone-800 transition-colors">
@@ -247,12 +240,12 @@ Here is your updated, fully ready-to-use HTML file.
                     </div>
 
                     <!-- Fully Managed (Featured) -->
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-white border-2 border-pastel-green transition-all flex flex-col justify-between space-y-8 relative select-card" data-step="2" data-id="managed" data-price="50">
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-white border-2 border-pastel-green transition-all flex flex-col justify-between space-y-8 relative select-card" data-step="2" data-id="managed" data-price="40">
                         <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pastel-green text-stone-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-sm">Best Value</span>
                         <div class="space-y-6 pt-2">
                             <h3 class="font-display font-bold text-xl text-stone-900">Fully Managed</h3>
                             <p class="text-xs text-stone-500">Send me your requests monthly and I'll deploy them for you. (Recommended for shops that will have several monthly updates of content, like e-commerce shops.)</p>
-                            <div class="font-display font-extrabold text-2xl text-stone-900">$50 <span class="text-xs text-stone-400 font-sans font-medium">/ month</span></div>
+                            <div class="font-display font-extrabold text-2xl text-stone-900">$40 <span class="text-xs text-stone-400 font-sans font-medium">/ month</span></div>
                             <ul class="space-y-3 text-xs text-stone-600 pt-4 border-t border-stone-200/50">
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Direct Code Handoff</li>
                                 <li class="flex items-center gap-2 text-stone-400 line-through"><span class="text-stone-300 font-bold text-sm">✕</span> Zero Recurring Fees</li>
@@ -261,7 +254,7 @@ Here is your updated, fully ready-to-use HTML file.
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Limitless Updates</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(2, 'managed', 50)" class="w-full py-3.5 rounded-2xl bg-stone-950 text-white font-bold text-xs select-btn" id="btn-2-managed">
+                        <button onclick="selectItem(2, 'managed', 40)" class="w-full py-3.5 rounded-2xl bg-stone-950 text-white font-bold text-xs select-btn" id="btn-2-managed">
                             Select Managed Plan
                         </button>
                     </div>
@@ -377,7 +370,7 @@ Here is your updated, fully ready-to-use HTML file.
                             <span id="icon-faq-3" class="text-xl font-bold text-stone-400 transition-transform">+</span>
                         </button>
                         <div id="ans-faq-3" class="hidden p-6 pt-0 text-xs sm:text-sm text-stone-600 border-t border-stone-100 leading-relaxed bg-cream-50/50">
-                            As much as you can! The more pictures, wording, colors, fonts, or inspiration you provide, the more I will be able to create exactly what you are looking for. I can only work with as much as I'm given. I'll setup a shared Google Drive for both of us to access your site assets once the creation process has begun.
+                            As much as you can! The more pictures, wording, colors, fonts, or inspiration you provide, the better I will be able to create exactly what you are looking for. I can only work with as much as I'm given. I'll setup a shared Google Drive for both of us to access your site assets once the creation process has begun.
                         </div>
                     </div>
 
@@ -388,7 +381,29 @@ Here is your updated, fully ready-to-use HTML file.
                             <span id="icon-faq-4" class="text-xl font-bold text-stone-400 transition-transform">+</span>
                         </button>
                         <div id="ans-faq-4" class="hidden p-6 pt-0 text-xs sm:text-sm text-stone-600 border-t border-stone-100 leading-relaxed bg-cream-50/50">
-                            It depends on the type of site you purchased! My standard turnaround target for multi-page options takes roughly 1-3 weeks from creating structural blueprint, gathering images, building, and making final edits. Again, it depends on the complexity of your request, and we can discuss that more when you submit your quote request!
+                            It depends on the type of site you purchased! My standard turnaround target for multi-page options takes roughly 4-6 weeks from creating structural blueprint, gathering images, building, and making final edits. Again, it depends on the complexity of your request, and we can discuss that more when you submit your quote request!
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="bg-white border border-stone-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                        <button onclick="toggleAccordion('faq-5')" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-stone-50 transition-colors focus:outline-none">
+                            <span class="font-display font-bold text-stone-800 text-sm sm:text-base">How do I pay?</span>
+                            <span id="icon-faq-5" class="text-xl font-bold text-stone-400 transition-transform">+</span>
+                        </button>
+                        <div id="ans-faq-5" class="hidden p-6 pt-0 text-xs sm:text-sm text-stone-600 border-t border-stone-100 leading-relaxed bg-cream-50/50">
+                            I accept payments through Venmo. Most services are a one-time fee, but if you opt-in for recurring monthly site maintenance, I'll send you a Venmo request on the 1st of each month.
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="bg-white border border-stone-200/60 rounded-2xl overflow-hidden transition-all duration-300">
+                        <button onclick="toggleAccordion('faq-6')" class="w-full p-6 text-left flex justify-between items-center gap-4 hover:bg-stone-50 transition-colors focus:outline-none">
+                            <span class="font-display font-bold text-stone-800 text-sm sm:text-base">What if I don't like something about my new website?</span>
+                            <span id="icon-faq-6" class="text-xl font-bold text-stone-400 transition-transform">+</span>
+                        </button>
+                        <div id="ans-faq-6" class="hidden p-6 pt-0 text-xs sm:text-sm text-stone-600 border-t border-stone-100 leading-relaxed bg-cream-50/50">
+                            Having a vision for your site is completely normal and expected. Before I start building your site, we'll discuss your goals, style, and vision. Once I finish, I'll have you look it over and request any final edits you may have. I allow 1 round of edits before publishing your site. Any changes/maintenance after that will be charged.
                         </div>
                     </div>
                 </div>
