@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials - Webster Web Design</title>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- External Custom Stylesheet -->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -48,15 +44,12 @@
 </head>
 <body class="bg-cream font-sans text-stone-800 selection:bg-pastel-yellow selection:text-stone-900 overflow-x-hidden">
 
-    <!-- NAVIGATION BAR -->
     <header class="fixed top-0 left-0 w-full z-50 px-4 py-3 md:px-8">
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 rounded-3xl border border-white/40 bg-cream/70 backdrop-blur-xl shadow-lg shadow-stone-100/10 transition-all duration-300">
-            <!-- Logo (No Icon) -->
             <a href="index.html" class="flex items-center gap-2 group focus:outline-none">
                 <span class="font-display font-bold text-lg tracking-tight text-stone-800">Webster<span class="text-xs font-sans text-stone-400 font-normal ml-0.5">WebDesign</span></span>
             </a>
 
-            <!-- Desktop Links -->
             <ul class="hidden md:flex items-center gap-8 font-semibold text-stone-600">
                 <li><a href="index.html" class="hover:text-stone-900 transition-colors duration-200">Home</a></li>
                 <li><a href="services.html" class="hover:text-stone-900 transition-colors duration-200">Services</a></li>
@@ -65,7 +58,6 @@
                 <li><a href="services.html#faq" class="hover:text-stone-900 transition-colors duration-200">FAQs</a></li>
             </ul>
 
-            <!-- CTA -->
             <div class="flex items-center gap-4">
                 <a href="quote.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-medium text-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
                     Build My Site
@@ -78,7 +70,6 @@
             </div>
         </nav>
 
-        <!-- Mobile Drawer -->
         <div id="mobile-drawer" class="hidden md:hidden fixed inset-x-0 top-[88px] mx-4 p-6 bg-cream/95 backdrop-blur-xl rounded-3xl border border-white/60 shadow-xl z-40 transition-all duration-300 transform origin-top scale-95 opacity-0">
             <ul class="flex flex-col gap-5 font-display font-medium text-lg text-stone-700">
                 <li><a href="index.html" class="mobile-nav-link block p-2 rounded-xl hover:bg-white/40 transition-colors">Home</a></li>
@@ -97,9 +88,7 @@
         </div>
     </header>
 
-    <!-- TESTIMONIALS MAIN BODY -->
     <main class="pt-32 pb-24 hero-endorsements relative overflow-hidden">
-        <!-- Floating Active Ambient Blobs -->
         <div class="creative-blob blob-pink blob-anim-1 blob-primary"></div>
         <div class="creative-blob blob-yellow blob-anim-2 blob-secondary"></div>
         <div class="creative-blob blob-blue blob-anim-3 blob-tertiary"></div>
@@ -111,12 +100,10 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS CARDS GRID -->
         <section class="py-6 relative z-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
-                    <!-- Quote 1 -->
                     <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
                         <div class="space-y-4">
                             <span class="text-5xl font-display font-extrabold text-pastel-blue leading-none select-none block">“</span>
@@ -132,7 +119,6 @@
                         </div>
                     </div>
 
-                    <!-- Quote 2 -->
                     <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
                         <div class="space-y-4">
                             <span class="text-5xl font-display font-extrabold text-pastel-pink leading-none select-none block">“</span>
@@ -149,7 +135,6 @@
                         </div>
                     </div>
 
-                    <!-- Quote 3 -->
                     <div class="p-6 sm:p-8 md:p-10 rounded-[32px] bg-white border border-stone-200/50 shadow-sm flex flex-col justify-between space-y-8 hover:shadow-lg transition-all duration-300">
                         <div class="space-y-4">
                             <span class="text-5xl font-display font-extrabold text-pastel-yellow leading-none select-none block">“</span>
@@ -170,9 +155,8 @@
             </div>
         </section>
 
-        <!-- NEW FORMSPREE FEEDBACK SUBMISSION SECTION -->
         <section class="py-16 mt-12 relative z-10 border-t border-stone-200/40">
-            <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-white/80 backdrop-blur-xl border border-stone-200/60 p-8 sm:p-10 rounded-[2.5rem] shadow-xl shadow-stone-200/20 space-y-8">
                     
                     <div class="text-center space-y-2">
@@ -181,35 +165,32 @@
                     </div>
 
                     <form action="https://formspree.io/f/xqeoqgjk" method="POST" class="space-y-5 text-sm">
-                        <!-- First Name Field -->
-                        <div class="space-y-1.5">
-                            <label for="firstname" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">First Name</label>
-                            <input type="text" name="firstname" id="firstname" required placeholder="John Doe" 
-                                class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label for="firstname" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">First Name</label>
+                                <input type="text" name="firstname" id="firstname" required placeholder="John" 
+                                    class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400">
+                            </div>
+
+                            <div class="space-y-1.5">
+                                <label for="lastname" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">Last Name</label>
+                                <input type="text" name="lastname" id="lastname" required placeholder="Doe" 
+                                    class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400">
+                            </div>
                         </div>
 
-                        <!-- Last Name Field -->
-                        <div class="space-y-1.5">
-                            <label for="lastname" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">Last Name</label>
-                            <input type="text" name="lastname" id="lastname" required placeholder="John Doe" 
-                                class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400">
-                        </div>
-
-                        <!-- Email Field -->
                         <div class="space-y-1.5">
                             <label for="form-email" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">Email Address</label>
                             <input type="email" name="_replyto" id="form-email" required placeholder="johndoe@company.com" 
                                 class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400">
                         </div>
 
-                        <!-- Message Field -->
                         <div class="space-y-1.5">
                             <label for="form-message" class="block font-semibold text-xs text-stone-600 tracking-wide uppercase">Your Endorsement or Feedback</label>
                             <textarea name="message" id="form-message" rows="5" required placeholder="Write your words here..." 
                                 class="w-full px-5 py-3.5 rounded-2xl border border-stone-200 bg-cream/30 focus:bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 transition-all text-stone-800 placeholder-stone-400 resize-none"></textarea>
                         </div>
 
-                        <!-- Submit Button -->
                         <div class="pt-2">
                             <button type="submit" class="w-full py-4 rounded-2xl bg-stone-900 hover:bg-stone-800 text-cream font-bold text-sm tracking-wide shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
                                 Send Endorsement
@@ -222,10 +203,8 @@
         </section>
     </main>
 
-    <!-- PREMIUM REFRESHED FOOTER -->
     <footer class="bg-stone-900 text-stone-300 py-16 px-4 md:px-8 border-t border-stone-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-stone-800 pb-12">
-            <!-- Column 1 (No Icon) -->
             <div class="md:col-span-5 space-y-6">
                 <a href="index.html" class="flex items-center gap-2 group">
                     <span class="font-display font-bold text-lg tracking-tight text-white">Webster Web Design</span>
@@ -242,7 +221,6 @@
                 </div>
             </div>
 
-            <!-- Column 2 -->
             <div class="md:col-span-3 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Solutions</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
@@ -253,7 +231,6 @@
                 </ul>
             </div>
 
-            <!-- Column 3 -->
             <div class="md:col-span-2 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Information</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
@@ -263,7 +240,6 @@
                 </ul>
             </div>
 
-            <!-- Column 4 -->
             <div class="md:col-span-2 space-y-4">
                 <h4 class="font-display font-bold text-sm text-white tracking-wide uppercase">Connect</h4>
                 <ul class="space-y-2 text-sm text-stone-400">
@@ -278,7 +254,6 @@
         </div>
     </footer>
 
-    <!-- MOBILE NAVIGATION LOGIC -->
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileDrawer = document.getElementById('mobile-drawer');
@@ -302,5 +277,3 @@
     </script>
 </body>
 </html>
-
-```
