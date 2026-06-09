@@ -109,11 +109,21 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream-50 hover:bg-cream border border-stone-200/50 hover:border-pastel-blue transition-all flex flex-col justify-between space-y-8 select-card" data-step="1" data-id="basic" data-price="350">
+                    <!-- Starter Package -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream-50 hover:bg-cream border border-stone-200/50 hover:border-pastel-blue transition-all flex flex-col justify-between gap-8 select-card" data-step="1" data-id="basic" data-price="315">
                         <div class="space-y-6">
                             <h3 class="font-display font-bold text-2xl text-stone-900">Starter Package</h3>
-                            <p class="text-xs text-stone-500">Megan is a photographer. She is looking for a simple website that showcases her work and allows people to message her to get a quote on pricing. She won't need more than 2 pages on her site. The starter package would be perfect for Megan.</p>
-                            <div class="font-display font-extrabold text-3xl text-stone-900">$350 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            <p class="text-xs text-stone-500 text-justify leading-relaxed">Megan is a photographer. She is looking for a simple website that showcases her work and allows people to message her to get a quote on pricing. She won't need more than 2 pages on her site. The starter package would be perfect for Megan.</p>
+                            
+                            <!-- Pricing Block with Discount -->
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm text-stone-400 line-through font-medium">$350</span>
+                                    <span class="text-[10px] font-sans font-bold bg-pastel-green/60 text-stone-900 px-2.5 py-0.5 rounded-full tracking-wider uppercase">10% Off</span>
+                                </div>
+                                <div class="font-display font-extrabold text-3xl text-stone-900">$315 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            </div>
+
                             <ul class="space-y-3 text-xs text-stone-600 pt-4 border-t border-stone-200/50 font-medium">
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Custom 2-Page Layout</li>
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Fully Mobile Responsive</li>
@@ -126,17 +136,27 @@
                                 <li class="flex items-center gap-2 text-stone-400 line-through"><span class="text-stone-300 font-bold text-sm">✕</span> Database Integration</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(1, 'basic', 350)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-basic">
+                        <button onclick="selectItem(1, 'basic', 315)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-basic">
                             Select Starter Package
                         </button>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream border border-stone-200 hover:border-pastel-yellow transition-all flex flex-col justify-between space-y-8 relative select-card" data-step="1" data-id="intermediate" data-price="1250">
-                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pastel-yellow text-stone-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-sm">Most Popular</span>
-                        <div class="space-y-6 pt-2">
+                    <!-- Signature Package (Featured - Fixed Alignment) -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream border border-stone-200 hover:border-pastel-yellow transition-all flex flex-col justify-between gap-8 relative select-card" data-step="1" data-id="intermediate" data-price="1125">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pastel-yellow text-stone-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-sm z-20">Most Popular</span>
+                        <div class="space-y-6">
                             <h3 class="font-display font-bold text-2xl text-stone-900">Signature Package</h3>
-                            <p class="text-xs text-stone-500">Alex has an IT company. He needs a site that highlights his robust services, the location he serves, customer reviews, and allows users to get in touch with him for pricing. Because he needs several unique pages, the signature package is a great fit for Alex.</p>
-                            <div class="font-display font-extrabold text-3xl text-stone-900">$1,250 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            <p class="text-xs text-stone-500 text-justify leading-relaxed">Alex has an IT company. He needs a site that highlights his robust services, the location he serves, customer reviews, and allows users to get in touch with him for pricing. Because he needs several unique pages, the signature package is a great fit for Alex.</p>
+                            
+                            <!-- Pricing Block with Discount -->
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm text-stone-400 line-through font-medium">$1,250</span>
+                                    <span class="text-[10px] font-sans font-bold bg-pastel-green/60 text-stone-900 px-2.5 py-0.5 rounded-full tracking-wider uppercase">10% Off</span>
+                                </div>
+                                <div class="font-display font-extrabold text-3xl text-stone-900">$1,125 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            </div>
+
                             <ul class="space-y-3 text-xs text-stone-600 pt-4 border-t border-stone-200/50 font-medium">
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Up to 5 Custom Pages</li>
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Fully Mobile Responsive</li>
@@ -148,16 +168,26 @@
                                 <li class="flex items-center gap-2 text-stone-400 line-through"><span class="text-stone-300 font-bold text-sm">✕</span> Database Integration</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(1, 'intermediate', 1250)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-intermediate">
+                        <button onclick="selectItem(1, 'intermediate', 1125)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-intermediate">
                             Select Signature Package
                         </button>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream-50 hover:bg-cream border border-stone-200/50 hover:border-pastel-green transition-all flex flex-col justify-between space-y-8 select-card" data-step="1" data-id="advanced" data-price="2750">
+                    <!-- Premium Package -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-cream-50 hover:bg-cream border border-stone-200/50 hover:border-pastel-green transition-all flex flex-col justify-between gap-8 select-card" data-step="1" data-id="advanced" data-price="2475">
                         <div class="space-y-6">
                             <h3 class="font-display font-bold text-2xl text-stone-900">Premium Package</h3>
-                            <p class="text-xs text-stone-500">John owns a pest control business. He needs a website that covers all the bases. One that allows him to showcase his various types of pest control, services and pricing, and even allows for an online checkout system. John wants customers to be able to save their data on his site so they can easily re-purchase when they login to their profile. John needs the premium package</p>
-                            <div class="font-display font-extrabold text-3xl text-stone-900">$2,750 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            <p class="text-xs text-stone-500 text-justify leading-relaxed">John owns a pest control business. He needs a website that covers all the bases. One that allows him to showcase his various types of pest control, services and pricing, and even allows for an online checkout system. John wants customers to be able to save their data on his site so they can easily re-purchase when they login to their profile. John needs the premium package</p>
+                            
+                            <!-- Pricing Block with Discount -->
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-sm text-stone-400 line-through font-medium">$2,750</span>
+                                    <span class="text-[10px] font-sans font-bold bg-pastel-green/60 text-stone-900 px-2.5 py-0.5 rounded-full tracking-wider uppercase">10% Off</span>
+                                </div>
+                                <div class="font-display font-extrabold text-3xl text-stone-900">$2,475 <span class="text-xs text-stone-400 font-sans font-medium">/ flat fee</span></div>
+                            </div>
+
                             <ul class="space-y-3 text-xs text-stone-600 pt-4 border-t border-stone-200/50 font-medium">
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Unlimited Pages</li>
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Fully Mobile Responsive</li>
@@ -168,7 +198,7 @@
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Database Integration</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(1, 'advanced', 2750)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-advanced">
+                        <button onclick="selectItem(1, 'advanced', 2475)" class="w-full py-3.5 rounded-2xl bg-stone-900 text-cream hover:bg-stone-850 font-bold text-xs select-btn transition-colors" id="btn-1-advanced">
                             Select Premium Package
                         </button>
                     </div>
@@ -184,7 +214,8 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-white hover:bg-cream-100/50 border border-stone-200/50 hover:border-pastel-pink transition-all flex flex-col justify-between space-y-8 select-card" data-step="2" data-id="free" data-price="0">
+                    <!-- One & Done -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-white hover:bg-cream-100/50 border border-stone-200/50 hover:border-pastel-pink transition-all flex flex-col justify-between gap-8 select-card" data-step="2" data-id="free" data-price="0">
                         <div class="space-y-6">
                             <h3 class="font-display font-bold text-xl text-stone-900">One & Done</h3>
                             <p class="text-xs text-stone-500">Once I complete your site, no anticipated maintenance will be required.</p>
@@ -197,12 +228,13 @@
                                 <li class="flex items-center gap-2 text-stone-400 line-through"><span class="text-stone-300 font-bold text-sm">✕</span> Limitless Updates</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(2, 'free', 0)" class="w-full py-3.5 rounded-2xl bg-stone-950 text-white font-bold text-xs select-btn" id="btn-2-free">
+                        <button onclick="selectItem(2, 'free', 0)" class="w-full py-3.5 rounded-2xl bg-stone-955 text-white font-bold text-xs select-btn" id="btn-2-free">
                             Select Free Handoff
                         </button>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-white hover:bg-cream-100/50 border border-stone-200/50 hover:border-pastel-blue transition-all flex flex-col justify-between space-y-8 select-card" data-step="2" data-id="as-needed" data-price="25">
+                    <!-- As Needed Support -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-white hover:bg-cream-100/50 border border-stone-200/50 hover:border-pastel-blue transition-all flex flex-col justify-between gap-8 select-card" data-step="2" data-id="as-needed" data-price="25">
                         <div class="space-y-6">
                             <h3 class="font-display font-bold text-xl text-stone-900">As Needed Support</h3>
                             <p class="text-xs text-stone-500">Pay only when your site content needs to change. (Recommended for portfolios or sites that change infrequently).</p>
@@ -215,14 +247,15 @@
                                 <li class="flex items-center gap-2 text-stone-400 line-through"><span class="text-stone-300 font-bold text-sm">✕</span> Limitless Updates</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(2, 'as-needed', 25)" class="w-full py-3.5 rounded-2xl bg-stone-950 text-white font-bold text-xs select-btn" id="btn-2-as-needed">
+                        <button onclick="selectItem(2, 'as-needed', 25)" class="w-full py-3.5 rounded-2xl bg-stone-955 text-white font-bold text-xs select-btn" id="btn-2-as-needed">
                             Select On-Demand
                         </button>
                     </div>
 
-                    <div class="p-6 sm:p-8 rounded-[32px] bg-white border border-stone-200 hover:border-pastel-green transition-all flex flex-col justify-between space-y-8 relative select-card" data-step="2" data-id="managed" data-price="40">
-                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pastel-green text-stone-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-sm">Best Value</span>
-                        <div class="space-y-6 pt-2">
+                    <!-- Fully Managed (Featured - Fixed Alignment) -->
+                    <div class="p-6 sm:p-8 rounded-[32px] bg-white border border-stone-200 hover:border-pastel-green transition-all flex flex-col justify-between gap-8 relative select-card" data-step="2" data-id="managed" data-price="40">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-pastel-green text-stone-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full shadow-sm z-20">Best Value</span>
+                        <div class="space-y-6">
                             <h3 class="font-display font-bold text-xl text-stone-900">Fully Managed</h3>
                             <p class="text-xs text-stone-500">Send me your requests monthly and I'll deploy them for you. (Recommended for shops that will have several monthly updates of content, like e-commerce shops.)</p>
                             <div class="font-display font-extrabold text-2xl text-stone-900">$40 <span class="text-xs text-stone-400 font-sans font-medium">/ month</span></div>
@@ -234,7 +267,7 @@
                                 <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold text-sm">✓</span> Limitless Updates</li>
                             </ul>
                         </div>
-                        <button onclick="selectItem(2, 'managed', 40)" class="w-full py-3.5 rounded-2xl bg-stone-950 text-white font-bold text-xs select-btn" id="btn-2-managed">
+                        <button onclick="selectItem(2, 'managed', 40)" class="w-full py-3.5 rounded-2xl bg-stone-955 text-white font-bold text-xs select-btn" id="btn-2-managed">
                             Select Managed Plan
                         </button>
                     </div>
@@ -384,6 +417,7 @@
 
     </main>
 
+    <!-- Sticky Summary Bar -->
     <div id="sticky-summary" class="hidden fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 w-[94%] max-w-4xl bg-stone-900/95 backdrop-blur-md border border-pastel-yellow rounded-2xl sm:rounded-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2 sm:gap-4 shadow-xl z-50 transition-all duration-500 opacity-0 translate-y-10">
         <div class="text-left">
             <p class="text-[10px] sm:text-xs text-stone-400 uppercase tracking-wider font-semibold font-display hidden sm:block">Selected Pricing Package</p>
@@ -406,9 +440,10 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-stone-900 text-stone-300 py-16 px-4 md:px-8 border-t border-stone-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-stone-800 pb-12">
-            <!-- Column 1 (No Icon) -->
+            <!-- Column 1 -->
             <div class="md:col-span-5 space-y-6">
                 <a href="index.html" class="flex items-center gap-2 group">
                     <span class="font-display font-bold text-lg tracking-tight text-white">Webster Web Design</span>
